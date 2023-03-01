@@ -1,6 +1,0 @@
-model\Transaction.class
-util\IdGenerator.class
-account\AccountService.class
-model\Transfer.class
-model\Account.class
-atm\Atm.class
