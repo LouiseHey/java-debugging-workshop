@@ -3,7 +3,7 @@ Welcome to the Java debugging workshop repo! The aim of this task is to get you 
 finding and fixing some bugs in this project. 
 
 ## The Project
-The main class project is Atm.java which defines possible actions you could define with an ATM.
+The main class is Atm.java which defines possible actions you could carry out with an ATM.
 This includes checking an accounts balance, withdrawing and depositing money, and transferring money to another account.
 There is also an AccountService.java class which keeps track of different accounts that have been registered in the system.
 
