@@ -36,7 +36,7 @@ public class Account {
 
     public Transaction decrement(int amount) {
         balance += amount;
-        Transaction transaction = new Transaction(IdGenerator.generate(), amount, this.id);
+        Transaction transaction = new Transaction(IdGenerator.generate(), -amount, this.id);
         transactions.add(transaction);
         return transaction;
     }

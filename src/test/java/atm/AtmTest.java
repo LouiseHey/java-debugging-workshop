@@ -18,13 +18,13 @@ class AtmTest {
     void beforeEach() {
         service = new AccountService();
         service.addAccount(new Account("id", 0));
-        service.addAccount(new Account("id2", 0));
+        service.addAccount(new Account("id2", 10));
         atm = new Atm(service);
     }
 
     @Test
     void whenCheckBalance_thenCorrectBalanceReturned() {
-        assertEquals(0, atm.checkBalance("id"));
+        assertEquals(10, atm.checkBalance("id2"));
     }
 
     @Test
@@ -44,7 +44,7 @@ class AtmTest {
 
         assertEquals(-10, atm.checkBalance("id"));
         assertEquals("id", t.getAccountId());
-        assertEquals(10, t.getAmount());
+        assertEquals(-10, t.getAmount());
 
         assertEquals(t, service.getAccount("id").getTransactions().get(0));
     }
@@ -54,7 +54,7 @@ class AtmTest {
         Transfer t = atm.transfer(10, "id", "id2");
 
         assertEquals(-10, atm.checkBalance("id"));
-        assertEquals(10, atm.checkBalance("id2"));
+        assertEquals(20, atm.checkBalance("id2"));
 
         assertEquals(10, t.getAmount());
 
